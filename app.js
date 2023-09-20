@@ -37,13 +37,15 @@ app.get('/', async (req, res) => {
     country: String */
 
 app.get('/add/:id', async (req, res) => {
-    const form = new Form({fname: req.body.fname},
-                        {lname: req.body.lname},
-                        {organization: req.body.org},
-                        {email: req.body.email},
-                        {phone: req.body.phone},
-                        {address: req.body.address});
-    res.render('index', {formId});
+    const form = new Form({fname: req.body.fname,
+                            lname: req.body.lname,
+                            organization: req.body.org,
+                            email: req.body.email,
+                            phone: req.body.phone,
+                            address: req.body.address,
+                            city: req.body.city, 
+                            country: req.body.country});
+    res.render('index', {form);
 });
 
 app.listen(port, () => {
