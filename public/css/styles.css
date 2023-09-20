@@ -1,0 +1,111 @@
+:root{
+    --font-family: Arial, Helvetica, sans-serif;
+    --text-color-primary: white;
+    --text-color-secondary: black;
+    --form-tab-background-color: white; 
+    --form-body-background-color: rgb(243, 116, 93);
+    --form-button-submit-background-color: coral;
+}
+
+body{
+    margin: 0;
+    background-color: wheat;
+}
+#form-main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form{
+    height: 80vh;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7vh 1fr;
+}
+#form-tab{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    
+    background-color: var(--form-tab-background-color);
+}
+
+#form-body-main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--form-body-background-color)
+}
+#form-body{
+    height: 85%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto repeat(3, 1fr) 2fr auto;
+    grid-row-gap: 1vh;
+    /* border: 1px solid black; */
+}
+#form-body>#title{
+    margin: 0;
+    color: var(--text-color-primary);
+    font-size: 26px;
+    font-weight: bold;
+    font-family: var(--font-family);
+}
+#form-body>div>label{
+    height: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: var(--text-color-primary);
+    font-family: var(--font-family);
+    font-weight: bold;
+}
+#form-body>div>input{
+    height: 4.5vh;
+    transition: box-shadow 1s;
+    border: 0px solid transparent;
+    border-radius: 1px;
+}
+#form-body>div>input:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.250);
+}
+#form-name, #form-email-phone, #form-org{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 1fr;
+    grid-column-gap: 6%;
+}
+#fname, #email, #org{
+    grid-column: 1/2;
+}
+#lname, #phone{
+    grid-column: 2/3;
+}
+#org-label, #address{
+    grid-column: 1/3;
+}
+#form-address{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 1fr 1fr;
+    grid-column-gap: 6%;
+}
+#button-submit{
+    height: 7vh;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--font-family);
+    background-color: var(--form-button-submit-background-color);
+    color: white;
+    border: 0px solid transparent;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.100);
+    transition: box-shadow 2s;
+}
+#button-submit:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.400);
+}
