@@ -27,9 +27,24 @@ app.get('/', async (req, res) => {
     res.render('index', {form});
 });
 
-app.get('/add', async (req, res) => {
-    
-})
+/* fname: String,
+    lname: String, 
+    organization: String, 
+    email: String, 
+    phone: Number, 
+    address: String,
+    city: String, 
+    country: String */
+
+app.get('/add/:id', async (req, res) => {
+    const form = new Form({fname: req.body.fname},
+                        {lname: req.body.lname},
+                        {organization: req.body.org},
+                        {email: req.body.email},
+                        {phone: req.body.phone},
+                        {address: req.body.address});
+    res.render('index', {formId});
+});
 
 app.listen(port, () => {
     console.log(`Server is running at port ${port}`);
