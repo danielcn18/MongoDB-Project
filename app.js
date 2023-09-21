@@ -23,20 +23,15 @@ app.use(express.static('./views'));
 app.use(express.urlencoded({extended: true}));
 
 app.get('/', async (req, res) => {
-    const form = await Form.find();
-    res.render('index', {form});
+    const forms = await Form.find();
+    res.render('index', {forms});
 });
 
-/* fname: String,
-    lname: String, 
-    organization: String, 
-    email: String, 
-    phone: Number, 
-    address: String,
-    city: String, 
-    country: String */
+app.get('/add', async (req, res) => {
+    res.render('add');
+})
 
-app.get('/add/:id', async (req, res) => {
+app.post('/add', async (req, res) => {
     const form = new Form({fname: req.body.fname,
                             lname: req.body.lname,
                             organization: req.body.org,
@@ -45,8 +40,11 @@ app.get('/add/:id', async (req, res) => {
                             address: req.body.address,
                             city: req.body.city, 
                             country: req.body.country});
-    res.render('index', {form);
+    await form.save();
+    res.redirect('/', {form});
 });
+
+app.get('/edit/:id')
 
 app.listen(port, () => {
     console.log(`Server is running at port ${port}`);

@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/addStyle.css">
 </head>
 <body>
     <div id="form-main">
         <div id="form">
             <div id="form-tab"></div>
             <div id="form-body-main">
-                <form id="form-body">
+                <form id="form-body" action="/add" method="post">
                     <p id="title">Competition Registration Form</p>
                     <div id="form-name">
                         <label id="name-label">Name</label>
@@ -26,7 +25,7 @@
                         <label for="email" id="email-label">Email</label>
                         <label for="phone" id="phone-label">Phone</label>
                         <input type="email" id="email" name="email" required>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone" maxlength="14" pattern="^[(][1-9]\d{2}[)] \d{3}-\d{4}$" placeholder="(###) ###-####" required>
                     </div>
                     <div id="form-address">
                         <label for="address">Address</label>

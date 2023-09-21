@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <link rel="stylesheet" href="/css/homeStyle.css">
 </head>
 <body>
-    
+    <div id="display-main">
+        <div id="display">
+            <div id="display-tab"></div>
+            <div id="display-body-main">
+                <div id="display-body">
+                    <ul>
+                        <% forms.forEach(form => { %>   
+                            <li>
+                                <p><%= form.fname %> <%= form.lname %></p>
+                                <button type="submit">
+                                    <a href="/edit/<%= form._id %>">Edit Form</a>
+                                </button>
+                                <button type="submit">
+                                    <a href="/delete/<%= form._id %>">Delete</a>
+                                </button>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
