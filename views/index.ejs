@@ -8,19 +8,33 @@
 <body>
     <div id="display-main">
         <div id="display">
-            <div id="display-tab"></div>
+            <div id="display-tab-main">
+                <div id="display-tab">
+                    <button id="add-form">
+                        <a href="/add">Add Task</a>
+                    </button>
+                </div>
+            </div>
             <div id="display-body-main">
                 <div id="display-body">
-                    <ul>
+                    <ul id="ul">
                         <% forms.forEach(form => { %>   
                             <li>
-                                <p><%= form.fname %> <%= form.lname %></p>
-                                <button type="submit">
-                                    <a href="/edit/<%= form._id %>">Edit Form</a>
-                                </button>
-                                <button type="submit">
-                                    <a href="/delete/<%= form._id %>">Delete</a>
-                                </button>
+                                <div>
+                                    <p>Name: <%= form.fname %> <%= form.lname %></p>
+                                    <p>Organization: <%= form.organization %></p>
+                                    <p>Email: <%= form.email %></p>
+                                    <p>Phone: <%= form.phone %></p>
+                                    <p>Address: <%= form.address %></p>
+                                    <p>City: <%= form.city %></p>
+                                    <p>Country: <%= form.country %></p>
+                                    <button id="form-button-edit" type="submit">
+                                        <a href="/edit/<%= form._id %>">Edit Form</a>
+                                    </button>
+                                    <button id="form-button-delete" type="submit">
+                                        <a href="/delete/<%= form._id %>">Delete</a>
+                                    </button>
+                                </div>
                             </li>
                         <% }); %>
                     </ul>
@@ -30,3 +44,10 @@
     </div>
 </body>
 </html>
+
+<!-- 
+    sign in 
+    create account
+    change password 
+    delete account
+ -->

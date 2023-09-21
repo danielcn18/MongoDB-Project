@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/editStyle.css">
+</head>
+<body>
+    <div id="display-main">
+        <div id="display">
+            <div id="display-tab-main">
+                <div id="display-tab">
+                    <button id="home-page">
+                        <a href="/">Go Back</a>
+                    </button>
+                </div>
+            </div>
+            <div id="display-body-main">
+                <form id="display-body">  
+                    <p id="title">Competition Registration Form</p>
+                    <div id="form-name">
+                        <label id="name-label">Name</label>
+                        <input type="text" id="fname" name="fname" placeholder="First Name" value="<%= form.fname %>" required>
+                        <input type="text" id="lname" name="lname" placeholder="Last Name" value="<%= form.lname %>" required>
+                    </div>
+                    <div id="form-org">
+                        <label for="org" id="org-label">Organization</label>
+                        <input type="text" id="org" name="organization" value="<%= form.organization %>" required>
+                    </div>
+                    <div id="form-email-phone">
+                        <label for="email" id="email-label">Email</label>
+                        <label for="phone" id="phone-label">Phone</label>
+                        <input type="email" id="email" name="email" value="<%= form.email %>" required>
+                        <input type="tel" id="phone" name="phone" value="<%= form.phone %>" maxlength="14" pattern="/^[(][1-9]\d{2}[)] \d{3}-\d{4}$/" placeholder="(###) ###-####" required>
+                    </div>
+                    <div id="form-address">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" required>
+                        <input type="text" id="city" name="city" value="<%= form.city %>" placeholder="City" required> 
+                        <input type="text" id="country" name="country" value="<%= form.country %>" placeholder="Country" required>
+                    </div>
+                    <button id="button-submit" type="submit">Update</button>
+
+                    <!-- <form id="display-form" action="/edit/<%= form._id %>" method="POST">
+                        <label for="">First Name:</label>
+                        <input type="text" name="fname" value="<%= form.fname %>">
+                        <label for="">Last Name:</label>
+                        <input type="text" name="lname" value="<%= form.lname %>">
+                        <label for="">Organization:</label>
+                        <input type="text" name="organization" value="<%= form.organization %>">
+                        <label for="">Email:</label>
+                        <input type="text" name="email" value="<%= form.email %>">
+                        <label for="">Phone:</label>
+                        <input type="text" name="phone" value="<%= form.phone %>">
+                        <label for="">Address:</label>
+                        <input type="text" name="address" value="<%= form.address %>">
+                        <label for="">City</label>
+                        <input type="text" name="city" value="<%= form.city %>">
+                        <label for="">Country</label>
+                        <input type="text" name="country" value="<%= form.country %>">
+                        <button type="submit">Update</button>
+                    </form>           -->
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
