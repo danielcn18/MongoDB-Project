@@ -87,10 +87,6 @@ body{
 #display-body::-webkit-scrollbar{
     display: none;
 }
-#display-body>#display-display{
-
-}
-
 #display-body{
     height: 85%;
     width: 80%;
@@ -154,9 +150,10 @@ body{
     color: white;
     border: 0px solid transparent;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.100);
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.100); */
+    box-shadow: -1px -1px 20px 20px rgba(0, 0, 0, 0.858);
     transition: box-shadow 2s;
 }
-#button-submit:hover{
+/* #button-submit:hover{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.400);
-}
+} */
